@@ -1,11 +1,11 @@
 <?php
-$articleLink = 'https://habr.com/ru/post/44098/'; //ññûëêà íà ñòàòüþ
-$articleText = file_get_contents('article.txt'); //÷èòàåì ñòàòüþ èç ôàéëà
-$aclean = preg_replace('/[\x00-\x1F\x7F]/u', '', $articleText); //óáèðàåì ëèøíèå ñèìâîëû
-$articlePreview = mb_substr($aclean, 0, 200)."..."; //îáðåçàåì òåêñò ñòàòüè äî 200 ñèìâîëîâ è äîáàâëÿåì â êîíöå ìíîãîòî÷èå
+$articleLink = 'https://habr.com/ru/post/44098/'; //ÑÑÑ‹Ð»ÐºÐ° Ð½Ð° ÑÑ‚Ð°Ñ‚ÑŒÑŽ
+$articleText = file_get_contents('article.txt'); //Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼ ÑÑ‚Ð°Ñ‚ÑŒÑŽ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°
+$aclean = preg_replace('/[\x00-\x1F\x7F]/u', '', $articleText); //ÑƒÐ±Ð¸Ñ€Ð°ÐµÐ¼ Ð»Ð¸ÑˆÐ½Ð¸Ðµ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹
+$articlePreview = mb_substr($aclean, 0, 200)."..."; //Ð¾Ð±Ñ€ÐµÐ·Ð°ÐµÐ¼ Ñ‚ÐµÐºÑÑ‚ ÑÑ‚Ð°Ñ‚ÑŒÐ¸ Ð´Ð¾ 200 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð² Ð¸ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð² ÐºÐ¾Ð½Ñ†Ðµ Ð¼Ð½Ð¾Ð³Ð¾Ñ‚Ð¾Ñ‡Ð¸Ðµ
 
-$words = explode(' ',$articlePreview); //ðàçáèðâàåì ñòðîêó
-//Äàëåå äåëàåì ìíîãîòî÷èå è òðè ïîñëåäíèõ ñëîâà ãèïåðññûëêîé íà ñòàòüþ
+$words = explode(' ',$articlePreview); //Ñ€Ð°Ð·Ð±Ð¸Ð²Ð°ÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ
+//Ð”Ð°Ð»ÐµÐµ Ð´ÐµÐ»Ð°ÐµÐ¼ Ð¼Ð½Ð¾Ð³Ð¾Ñ‚Ð¾Ñ‡Ð¸Ðµ Ð¸ Ñ‚Ñ€Ð¸ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½Ð¸Ñ… ÑÐ»Ð¾Ð²Ð° Ð³Ð¸Ð¿ÐµÑ€ÑÑÑ‹Ð»ÐºÐ¾Ð¹ Ð½Ð° ÑÑ‚Ð°Ñ‚ÑŒÑŽ
 $co = count($words);
     foreach ($words as $key => $word) {
     if($key == $co-3)
